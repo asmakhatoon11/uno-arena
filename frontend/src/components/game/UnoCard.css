@@ -1,0 +1,295 @@
+/**
+ * UNO ARENA — Playing Card Styles
+ * Original Dark Gaming Aesthetic + Vibrant UNO Functional Colors
+ */
+
+.uno-card {
+  position: relative;
+  width: 90px;
+  height: 135px;
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  user-select: none;
+  cursor: default;
+  transition: transform 0.22s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.22s ease, border-color 0.22s ease, filter 0.22s ease;
+  overflow: hidden;
+  background-color: var(--bg-tertiary);
+  transform-origin: bottom center;
+}
+
+/* Card Sizes */
+.uno-card.size-sm {
+  width: 55px;
+  height: 82px;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.uno-card.size-md {
+  width: 90px;
+  height: 135px;
+}
+
+.uno-card.size-lg {
+  width: 120px;
+  height: 175px;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  border-width: 3px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.75);
+}
+
+/* Color Themes */
+.uno-card.color-red {
+  background: var(--uno-red-gradient);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.uno-card.color-blue {
+  background: var(--uno-blue-gradient);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.uno-card.color-green {
+  background: var(--uno-green-gradient);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.uno-card.color-yellow {
+  background: var(--uno-yellow-gradient);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.uno-card.color-wild {
+  background: linear-gradient(135deg, #222233 0%, #111119 100%);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Card Face Down */
+.uno-card.face-down {
+  background: linear-gradient(145deg, #181824 0%, #0a0a0f 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.card-back-badge {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  border: 2px solid var(--uno-red);
+  background: radial-gradient(circle, rgba(255, 59, 48, 0.3) 0%, transparent 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  transform: rotate(-25deg);
+  box-shadow: 0 0 15px rgba(255, 59, 48, 0.5);
+}
+
+.uno-card.size-lg .card-back-badge {
+  font-size: 1.4rem;
+}
+
+/* Inner Oval Design */
+.card-inner-oval {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  width: 78%;
+  height: 74%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.uno-card.color-wild .card-inner-oval {
+  background: var(--uno-wild-gradient);
+  border: 2px solid #fff;
+}
+
+/* Card Content / Typography */
+.corner-badge {
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.uno-card.size-sm .corner-badge {
+  font-size: 0.7rem;
+}
+
+.uno-card.size-lg .corner-badge {
+  font-size: 1.35rem;
+}
+
+.corner-top-left {
+  align-self: flex-start;
+}
+
+.corner-bottom-right {
+  align-self: flex-end;
+  transform: rotate(180deg);
+}
+
+.center-symbol {
+  font-weight: 900;
+  font-size: 2.2rem;
+  line-height: 1;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.uno-card.size-sm .center-symbol {
+  font-size: 1.3rem;
+}
+
+.uno-card.size-lg .center-symbol {
+  font-size: 3.2rem;
+}
+
+.uno-card.color-red .center-symbol { color: var(--uno-red); }
+.uno-card.color-blue .center-symbol { color: var(--uno-blue); }
+.uno-card.color-green .center-symbol { color: var(--uno-green); }
+.uno-card.color-yellow .center-symbol { color: #d97706; }
+.uno-card.color-wild .center-symbol {
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Action text label under center symbol (e.g. SKIP, REVERSE) */
+.card-action-text {
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+  text-transform: uppercase;
+  z-index: 2;
+  line-height: 1;
+}
+
+.uno-card.color-red .card-action-text { color: var(--uno-red); }
+.uno-card.color-blue .card-action-text { color: var(--uno-blue); }
+.uno-card.color-green .card-action-text { color: var(--uno-green); }
+.uno-card.color-yellow .card-action-text { color: #d97706; }
+.uno-card.color-wild .card-action-text { color: #ffffff; text-shadow: 0 1px 2px #000; }
+
+.uno-card.size-lg .card-action-text {
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* Playable Pip Indicator */
+.playable-indicator-pip {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #30D158;
+  box-shadow: 0 0 8px #30D158;
+  z-index: 5;
+}
+
+/* Playable States */
+.uno-card.playable {
+  cursor: pointer;
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.35);
+  animation: playablePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes playablePulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 16px rgba(255, 255, 255, 0.65);
+  }
+}
+
+.uno-card.playable:hover {
+  transform: translateY(-22px) scale(1.08);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 255, 255, 0.7);
+  z-index: 100 !important;
+}
+
+/* Selected State */
+.uno-card.selected {
+  transform: translateY(-30px) scale(1.12) !important;
+  box-shadow: 0 24px 45px rgba(0, 0, 0, 0.95), 0 0 30px var(--uno-yellow) !important;
+  border-color: var(--uno-yellow) !important;
+  z-index: 101 !important;
+}
+
+/* Muted Invalid Cards (visible and readable, but clearly inactive) */
+.uno-card.not-playable {
+  filter: brightness(0.68) saturate(0.7);
+  opacity: 0.75;
+  cursor: pointer; /* Allows clicking to get the 'Cannot be played' message */
+}
+
+.uno-card.not-playable:hover {
+  filter: brightness(0.78) saturate(0.8);
+  transform: translateY(-4px);
+}
+
+/* Newly Drawn Card Highlight */
+.uno-card.newly-drawn {
+  animation: newlyDrawnPop 1.4s ease-out;
+  border-color: #30D158 !important;
+  box-shadow: 0 0 30px rgba(48, 209, 88, 0.8) !important;
+  z-index: 95 !important;
+}
+
+@keyframes newlyDrawnPop {
+  0% { transform: translateY(-35px) scale(1.18); box-shadow: 0 0 40px rgba(48, 209, 88, 1); }
+  40% { transform: translateY(-20px) scale(1.1); box-shadow: 0 0 30px rgba(48, 209, 88, 0.8); }
+  100% { transform: translateY(0) scale(1); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); }
+}
+
+/* Invalid Move Shake */
+.uno-card.invalid-shake {
+  animation: cardWiggle 0.35s ease-in-out !important;
+  border-color: var(--uno-red) !important;
+}
+
+@keyframes cardWiggle {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px) rotate(-3deg); }
+  40% { transform: translateX(8px) rotate(3deg); }
+  60% { transform: translateX(-6px) rotate(-2deg); }
+  80% { transform: translateX(6px) rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uno-card.playable,
+  .uno-card.newly-drawn,
+  .uno-card.invalid-shake {
+    animation: none !important;
+  }
+  .uno-card.playable:hover {
+    transform: translateY(-4px) !important;
+  }
+}

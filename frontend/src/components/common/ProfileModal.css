@@ -1,0 +1,124 @@
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  color: var(--text-primary);
+}
+
+.profile-hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+}
+
+.profile-avatar-large {
+  font-size: 3rem;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid var(--uno-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(255, 214, 10, 0.3);
+}
+
+.profile-details h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.profile-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--uno-green);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.profile-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.stat-box {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--uno-yellow);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Achievements */
+.section-subtitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+}
+
+.achievement-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.achievement-card.unlocked {
+  opacity: 1;
+  filter: grayscale(0);
+  border-color: rgba(255, 214, 10, 0.4);
+  background: rgba(255, 214, 10, 0.05);
+}
+
+.ach-icon {
+  font-size: 1.6rem;
+}
+
+.ach-name {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.ach-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}

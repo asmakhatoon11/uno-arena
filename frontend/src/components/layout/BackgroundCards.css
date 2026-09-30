@@ -1,0 +1,110 @@
+.bg-cards-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg-card {
+  position: absolute;
+  width: 220px;
+  height: 330px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  opacity: 0.14;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-slow);
+}
+
+.bg-card-red {
+  top: 10%;
+  left: 6%;
+  background: var(--uno-red-gradient);
+  transform: rotate(-18deg);
+  box-shadow: 0 0 60px rgba(255, 59, 48, 0.25);
+  animation: floatCard1 8s ease-in-out infinite;
+}
+
+.bg-card-blue {
+  top: 15%;
+  right: 8%;
+  background: var(--uno-blue-gradient);
+  transform: rotate(22deg);
+  box-shadow: 0 0 60px rgba(10, 132, 255, 0.25);
+  animation: floatCard2 10s ease-in-out infinite;
+}
+
+.bg-card-green {
+  bottom: 8%;
+  left: 12%;
+  background: var(--uno-green-gradient);
+  transform: rotate(14deg);
+  box-shadow: 0 0 60px rgba(48, 209, 88, 0.25);
+  animation: floatCard3 9s ease-in-out infinite;
+}
+
+.bg-card-yellow {
+  bottom: 12%;
+  right: 14%;
+  background: var(--uno-yellow-gradient);
+  transform: rotate(-24deg);
+  box-shadow: 0 0 60px rgba(255, 214, 10, 0.25);
+  animation: floatCard4 11s ease-in-out infinite;
+}
+
+.bg-card-wild {
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(4deg) scale(0.9);
+  background: radial-gradient(circle at center, rgba(255, 59, 48, 0.15) 0%, rgba(10, 132, 255, 0.1) 40%, transparent 70%);
+  border: 1px dashed rgba(255, 255, 255, 0.06);
+  opacity: 0.1;
+  animation: floatCardWild 14s ease-in-out infinite alternate;
+}
+
+@keyframes floatCard1 {
+  0%, 100% { transform: translateY(0px) rotate(-18deg); }
+  50% { transform: translateY(-14px) rotate(-15deg); }
+}
+
+@keyframes floatCard2 {
+  0%, 100% { transform: translateY(0px) rotate(22deg); }
+  50% { transform: translateY(-18px) rotate(25deg); }
+}
+
+@keyframes floatCard3 {
+  0%, 100% { transform: translateY(0px) rotate(14deg); }
+  50% { transform: translateY(-15px) rotate(11deg); }
+}
+
+@keyframes floatCard4 {
+  0%, 100% { transform: translateY(0px) rotate(-24deg); }
+  50% { transform: translateY(-12px) rotate(-21deg); }
+}
+
+@keyframes floatCardWild {
+  0% { transform: translate(-50%, -50%) rotate(4deg) scale(0.9); }
+  100% { transform: translate(-50%, -50%) rotate(-4deg) scale(0.95); }
+}
+
+@media (max-width: 768px) {
+  .bg-card {
+    width: 140px;
+    height: 210px;
+    opacity: 0.08;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-card,
+  .bg-card-red,
+  .bg-card-blue,
+  .bg-card-green,
+  .bg-card-yellow,
+  .bg-card-wild {
+    animation: none !important;
+  }
+}

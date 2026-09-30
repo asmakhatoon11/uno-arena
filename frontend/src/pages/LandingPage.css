@@ -1,0 +1,206 @@
+.landing-page {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 140px);
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+}
+
+.landing-content {
+  max-width: 840px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: heroEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 59, 48, 0.1);
+  border: 1px solid rgba(255, 59, 48, 0.3);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-6);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  box-shadow: 0 0 10px var(--color-primary);
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: var(--space-3);
+  color: var(--text-primary);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #FF3B30 0%, #FFD60A 50%, #0A84FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(255, 59, 48, 0.3);
+}
+
+.hero-tagline {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  line-height: 1.6;
+  margin-bottom: var(--space-8);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  width: 100%;
+  margin-bottom: var(--space-12);
+}
+
+.action-btn {
+  min-width: 190px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transition: all var(--transition-bounce);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(255, 59, 48, 0.35);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  width: 100%;
+  margin-top: var(--space-4);
+}
+
+.feature-item {
+  background: var(--glass-panel);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--transition-normal);
+  text-align: left;
+}
+
+.feature-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.feature-icon {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-2);
+}
+
+.feature-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.feature-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.rules-content {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.rules-content h4 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rules-content h4:first-child {
+  margin-top: 0;
+}
+
+.rules-content ul {
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.rules-content li {
+  margin-bottom: var(--space-2);
+}
+
+@media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-content {
+    animation: none !important;
+  }
+  .action-btn:hover,
+  .feature-item:hover {
+    transform: none !important;
+  }
+}

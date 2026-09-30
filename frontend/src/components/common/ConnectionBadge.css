@@ -1,0 +1,51 @@
+.connection-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  transition: all var(--transition-normal);
+  user-select: none;
+}
+
+.connection-badge.connected {
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+}
+
+.connection-badge.disconnected {
+  border-color: rgba(239, 68, 68, 0.35);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+}
+
+.status-indicator {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.status-text {
+  letter-spacing: 0.02em;
+}
+
+.connected .status-text {
+  color: var(--status-connected);
+}
+
+.disconnected .status-text {
+  color: var(--status-disconnected);
+}
+
+.socket-id-tag {
+  font-family: monospace;
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  color: var(--text-muted);
+}

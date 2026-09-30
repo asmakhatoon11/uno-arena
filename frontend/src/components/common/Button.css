@@ -1,0 +1,179 @@
+.arena-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  user-select: none;
+}
+
+/* Distinct Disabled State */
+.arena-btn:disabled,
+.arena-btn.is-disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(45%);
+  box-shadow: none !important;
+  transform: none !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Loading State & Spinner */
+.arena-btn.is-loading {
+  cursor: wait;
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.btn-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: btnSpin 0.75s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes btnSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sizes */
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+.btn-md {
+  padding: 12px 24px;
+  font-size: 0.925rem;
+}
+
+.btn-lg {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+}
+
+/* Primary Variant */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4338ca 100%);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #7175fc 0%, #4f46e5 100%);
+  box-shadow: 0 6px 26px rgba(99, 102, 241, 0.55);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
+}
+
+/* Secondary Variant */
+.btn-secondary {
+  background: linear-gradient(135deg, var(--bg-surface-elevated) 0%, #1e2842 100%);
+  color: var(--text-primary);
+  border-color: var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #243050 0%, #2a375c 100%);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Success Variant */
+.btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  box-shadow: 0 6px 26px rgba(16, 185, 129, 0.55);
+  transform: translateY(-2px);
+}
+
+.btn-success:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Outline Variant */
+.btn-outline {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+  border-color: var(--glass-border);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline:active {
+  transform: translateY(1px) scale(0.98);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Danger Variant */
+.btn-danger {
+  background: var(--uno-red-gradient);
+  color: #ffffff;
+  box-shadow: var(--uno-red-glow);
+}
+
+.btn-danger:hover {
+  box-shadow: 0 0 25px rgba(255, 51, 102, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-danger:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 12px rgba(255, 51, 102, 0.4);
+}
+
+/* Ghost Variant */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.btn-ghost:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-ghost:active {
+  transform: translateY(1px) scale(0.98);
+  background: rgba(255, 255, 255, 0.08);
+}

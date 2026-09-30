@@ -1,0 +1,183 @@
+.arena-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.arena-main {
+  flex: 1;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.arena-footer {
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid var(--glass-border);
+  background: rgba(7, 9, 14, 0.9);
+  padding: var(--space-4) 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.footer-credits {
+  font-weight: 500;
+}
+
+.footer-status {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* Multiplayer Reconnection Status Banner */
+.reconnect-banner {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  animation: fadeInDown 0.3s ease-out;
+  transition: all 0.3s ease;
+}
+
+.reconnect-banner.reconnecting {
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(59, 130, 246, 0.6);
+  color: #93c5fd;
+}
+
+.reconnect-banner.reconnected {
+  background: rgba(6, 78, 59, 0.92);
+  border: 1px solid rgba(16, 185, 129, 0.6);
+  color: #6ee7b7;
+}
+
+.reconnect-banner.warning {
+  background: rgba(120, 53, 15, 0.94);
+  border: 1px solid rgba(245, 158, 11, 0.7);
+  color: #fde68a;
+}
+
+.reconnect-banner.info {
+  background: rgba(30, 41, 59, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #e2e8f0;
+}
+
+.reconnect-spinner {
+  display: inline-block;
+  animation: reconnectSpin 1s linear infinite;
+}
+
+.reconnect-banner.reconnected .reconnect-spinner,
+.reconnect-banner.warning .reconnect-spinner,
+.reconnect-banner.info .reconnect-spinner {
+  animation: none;
+}
+
+@keyframes reconnectSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* State Guard & Reconnecting Loading Screen */
+.arena-loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 160px);
+  padding: var(--space-6);
+  width: 100%;
+}
+
+.arena-loading-card,
+.state-guard-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 32px;
+  background: rgba(18, 22, 34, 0.9);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(16px);
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInDown 0.3s ease-out;
+}
+
+.arena-loading-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: 24px;
+}
+
+.arena-loading-spinner,
+.state-guard-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-top-color: var(--uno-yellow);
+  border-right-color: var(--uno-red);
+  border-radius: 50%;
+  animation: reconnectSpin 0.9s linear infinite;
+  margin-bottom: 20px;
+}
+
+.arena-loading-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.arena-loading-sub,
+.state-guard-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+

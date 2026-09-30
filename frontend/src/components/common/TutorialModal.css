@@ -1,0 +1,67 @@
+.tutorial-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: var(--text-primary);
+  text-align: center;
+  padding: var(--space-2) 0;
+}
+
+.tutorial-step-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: var(--space-2);
+}
+
+.step-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.step-dot.active {
+  background: var(--uno-yellow);
+  box-shadow: 0 0 10px rgba(255, 214, 10, 0.5);
+  transform: scale(1.2);
+}
+
+.step-dot.completed {
+  background: var(--uno-green);
+}
+
+.tutorial-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-2);
+}
+
+.tutorial-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: var(--space-1);
+}
+
+.tutorial-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.tutorial-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--glass-border);
+}
+
+.tutorial-nav-btns {
+  display: flex;
+  gap: 8px;
+}

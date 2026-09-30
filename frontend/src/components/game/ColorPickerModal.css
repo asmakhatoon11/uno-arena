@@ -1,0 +1,112 @@
+.color-picker-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: pickerFadeIn 0.25s ease-out;
+}
+
+@keyframes pickerFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.color-picker-modal {
+  background: var(--glass-panel);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  max-width: 440px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 0.1);
+  animation: pickerPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pickerPop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.picker-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #fff;
+  margin-bottom: var(--space-1);
+}
+
+.picker-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.color-choices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.color-choice-btn {
+  height: 90px;
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #fff;
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-choice-btn:hover {
+  transform: scale(1.06) translateY(-2px);
+}
+
+.choice-red {
+  background: var(--uno-red-gradient);
+  box-shadow: 0 0 25px rgba(255, 59, 48, 0.4);
+}
+
+.choice-blue {
+  background: var(--uno-blue-gradient);
+  box-shadow: 0 0 25px rgba(10, 132, 255, 0.4);
+}
+
+.choice-yellow {
+  background: var(--uno-yellow-gradient);
+  box-shadow: 0 0 25px rgba(255, 214, 10, 0.4);
+  color: #000;
+}
+
+.choice-green {
+  background: var(--uno-green-gradient);
+  box-shadow: 0 0 25px rgba(48, 209, 88, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .color-picker-overlay,
+  .color-picker-modal {
+    animation: none !important;
+  }
+  .color-choice-btn:hover {
+    transform: none !important;
+  }
+}

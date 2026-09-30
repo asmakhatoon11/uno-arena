@@ -1,0 +1,24 @@
+{
+  "name": "uno-arena",
+  "version": "1.0.0",
+  "description": "UNO Arena — Real-Time Multiplayer Web Card Game",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "start:backend": "node backend/server.js",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend"
+  },
+  "keywords": [
+    "uno",
+    "multiplayer",
+    "socket.io",
+    "react",
+    "vite",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,229 @@
+/**
+ * UNO ARENA — Result Page Styles
+ * Victory celebration, scoreboard, and rematch lobby
+ */
+
+.result-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 150px);
+  padding: var(--space-6);
+  z-index: 10;
+  position: relative;
+}
+
+.result-card-wrapper {
+  width: 100%;
+  max-width: 680px;
+  animation: victoryIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes victoryIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.victory-banner {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  background: radial-gradient(circle at center, rgba(255, 214, 10, 0.15) 0%, transparent 70%);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+  position: relative;
+}
+
+.trophy-icon {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-2);
+  filter: drop-shadow(0 0 20px rgba(255, 214, 10, 0.6));
+  animation: trophyFloat 2s ease-in-out infinite alternate;
+}
+
+@keyframes trophyFloat {
+  from { transform: translateY(0px) scale(1); }
+  to { transform: translateY(-8px) scale(1.06); }
+}
+
+.winner-headline {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: var(--uno-yellow);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-1);
+  text-shadow: 0 0 25px rgba(255, 214, 10, 0.4);
+}
+
+.victory-subtext {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Standings Scoreboard */
+.scoreboard-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--space-8);
+}
+
+.scoreboard-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  transition: all var(--transition-normal);
+}
+
+.scoreboard-row.winner-row {
+  background: rgba(255, 214, 10, 0.08);
+  border-color: rgba(255, 214, 10, 0.35);
+  box-shadow: 0 0 20px rgba(255, 214, 10, 0.15);
+}
+
+.rank-player-col {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rank-badge {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.player-avatar-small {
+  font-size: 1.4rem;
+}
+
+.player-name-bold {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.score-stats-col {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: right;
+}
+
+.round-pts-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--uno-green);
+  background: rgba(48, 209, 88, 0.15);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.total-score-badge {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--uno-yellow);
+}
+
+.cards-left-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Result Action Buttons */
+.result-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.result-actions > * {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .result-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-page-container {
+    padding: var(--space-3) var(--space-2);
+    min-height: calc(100vh - 100px);
+  }
+
+  .victory-banner {
+    padding: var(--space-4) var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  .trophy-icon {
+    font-size: 2.8rem;
+  }
+
+  .winner-headline {
+    font-size: 1.5rem;
+  }
+
+  .scoreboard-row {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .rank-player-col {
+    gap: 8px;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .rank-badge {
+    font-size: 0.88rem;
+    flex-shrink: 0;
+  }
+
+  .player-avatar-small {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .player-name-bold {
+    font-size: 0.88rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    max-width: 125px;
+  }
+
+  .score-stats-col {
+    flex-shrink: 0;
+    gap: 4px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .cards-left-text {
+    font-size: 0.72rem;
+  }
+
+  .total-score-badge {
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-card-wrapper,
+  .trophy-icon {
+    animation: none !important;
+  }
+}
